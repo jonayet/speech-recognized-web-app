@@ -89,11 +89,7 @@ namespace SpeechRecognizedWebApp
         protected virtual void OnSpeechRecognized(SpeechRecognizedEventArgs e)
         {
             var handler = this.SpeechRecognized;
-
-            if (handler != null)
-            {
-                handler(this, e);
-            }
+            handler?.Invoke(this, e);
         }
 
         protected SpeechRecognitionProvider GetProvider()
