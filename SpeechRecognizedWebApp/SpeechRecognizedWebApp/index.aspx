@@ -39,13 +39,10 @@
 
         <input id="buttonStart" type="button" class="button" value="Start" onclick=" start() " />
         <input type="button" class="button" value="Stop" onclick="stop()" />
-            <input type="button" value="Speak" onclick="speak()" style="height: 41px; width: 167px; margin-top: 0px" /><textarea id="text-output" cols="20" rows="6" ></textarea>
+        <input type="button" value="Speak" onclick="speak()" style="height: 41px; width: 167px; margin-top: 0px" /><textarea id="text-output" cols="20" rows="6" ></textarea>
         <web:SpeechRecognition runat="server" ID="processor" ClientIDMode="Static" Mode="Desktop" Culture="en-US" OnSpeechRecognized="OnSpeechRecognized" OnClientSpeechRecognized="onSpeechRecognized" />
-
-        <div>
-            <web:SpeechSynthesizer runat="server" ID="synthesizer" Age="Senior" Gender="Male" Culture="en-US" Rate="0" Volume="100" />
-            &nbsp;</div>
-
+        <web:SpeechSynthesizer runat="server" ID="synthesizer" Age="Senior" Gender="Male" Culture="en-US" Rate="0" Volume="100" />
+        
     </form>
 
     <script type="text/javascript">
@@ -57,6 +54,7 @@
 
             var textbox = document.getElementById('text-output');
             textbox.value = 'Recognized: ' + result.Text + '\nAlternatives: ' + alternatives;
+            responsiveVoice.speak("did you said, " + result.Text + "?");
         }
 
         function start() {
@@ -69,7 +67,7 @@
 
         function speak() {
             var textbox = document.getElementById('text-output');
-            document.getElementById('synthesizer').speak(textbox.value);
+            responsiveVoice.speak(textbox.value);
         }
     </script>
 </body>

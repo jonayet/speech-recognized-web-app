@@ -79,6 +79,10 @@ namespace SpeechRecognizedWebApp
                     script, true);
             }
 
+            //this.Page.ClientScript.RegisterClientScriptResource(this.GetType(),
+            //    String.Concat(this.GetType().Namespace, ".getUserMedia.js"));            
+            this.Page.ClientScript.RegisterClientScriptResource(this.GetType(),
+                String.Concat(this.GetType().Namespace, ".responsivevoice.js"));
             this.Page.ClientScript.RegisterClientScriptResource(this.GetType(),
                 String.Concat(this.GetType().Namespace, ".Script.js"));
             this.Page.Items[typeof(SpeechRecognition)] = this;

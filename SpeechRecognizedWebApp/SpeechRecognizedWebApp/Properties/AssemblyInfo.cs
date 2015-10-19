@@ -6,6 +6,8 @@ using System.Web.UI;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
+[assembly: WebResource("SpeechRecognizedWebApp.getUserMedia.js", "text/javascript")]
+[assembly: WebResource("SpeechRecognizedWebApp.responsivevoice.js", "text/javascript")]
 [assembly: WebResource("SpeechRecognizedWebApp.Script.js", "text/javascript")]
 [assembly: AssemblyTitle("SpeechRecognizedWebApp")]
 [assembly: AssemblyDescription("")]
