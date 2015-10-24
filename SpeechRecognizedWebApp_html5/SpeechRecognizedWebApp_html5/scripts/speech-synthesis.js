@@ -1,4 +1,4 @@
-﻿(function (speechSynthesis, speechSynthesisUtterance) {
+﻿(function (speechApi, speechSynthesis, speechSynthesisUtterance) {
     "use_strict";
 
     if (!speechSynthesis) {
@@ -6,24 +6,32 @@
         return;
     }
 
-    function speak(text, callback) {
-        var u = new speechSynthesisUtterance();
-        u.text = text;
-        u.lang = 'en-US';
+    window.speechApi = speechApi || {};
 
-        u.onend = function () {
+    function speak(text, callback) {
+        var msg = new speechSynthesisUtterance();
+        //var voices = window.speechSynthesis.getVoices();
+        //msg.voice = voices[10];
+        msg.voiceURI = 'native';
+        msg.volume = 1; // 0 to 1
+        msg.rate = 1; // 0.1 to 10
+        msg.pitch = 1; //0 to 2
+        msg.text = text;
+        msg.lang = 'en-US';
+
+        msg.onend = function() {
             if (callback) {
                 callback();
             }
         };
 
-        u.onerror = function (e) {
+        msg.onerror = function(e) {
             if (callback) {
                 callback(e);
             }
         };
-        speechSynthesis.speak(u);
+        speechSynthesis.speak(msg);
     }
 
-    window.speak = speak;
-})(window.speechSynthesis, window.SpeechSynthesisUtterance);
+    window.speechApi.speak = speak;
+})(window.speechApi , window.speechSynthesis, window.SpeechSynthesisUtterance);
