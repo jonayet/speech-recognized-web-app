@@ -52,10 +52,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="scripts\geo-location.js" />
     <Content Include="scripts\speech-recognition.js" />
     <Content Include="scripts\jquery-2.1.4.min.js" />
     <Content Include="scripts\main.js" />
     <Content Include="scripts\speech-synthesis.js" />
+    <Content Include="styles\bootstrap.min.css" />
+    <Content Include="styles\style.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
