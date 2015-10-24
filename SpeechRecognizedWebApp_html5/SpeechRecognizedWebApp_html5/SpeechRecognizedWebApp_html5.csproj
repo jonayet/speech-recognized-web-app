@@ -42,6 +42,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="index.html" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -51,6 +52,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="scripts\jquery-2.1.4.min.js" />
+    <Content Include="scripts\main.js" />
+    <Content Include="scripts\speech-synthesis.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
